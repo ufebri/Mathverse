@@ -1,77 +1,16 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_listMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Apa ibukota Indonesia? \n jawab :"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp">
-
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/radioGroup"
-            android:layout_toLeftOf="@+id/radioGroup"
-            android:layout_toStartOf="@+id/radioGroup"
-            android:foreground="?attr/selectableItemBackground"
-            android:onClick="onRadioButton"
-            android:text="Bandung" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/radioButton"
-            android:layout_alignStart="@+id/radioButton"
-            android:layout_below="@+id/radioButton"
-            android:layout_marginTop="36dp"
-            android:foreground="?attr/selectableItemBackground"
-            android:onClick="onRadioButton"
-            android:text="Surabaya" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/radioButton2"
-            android:layout_alignStart="@+id/radioButton2"
-            android:layout_below="@+id/radioButton2"
-            android:layout_marginTop="26dp"
-            android:foreground="?attr/selectableItemBackground"
-            android:onClick="onRadioButton"
-            android:text="Jakarta" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/radioButton3"
-            android:layout_alignStart="@+id/radioButton3"
-            android:layout_below="@+id/radioButton3"
-            android:layout_marginTop="39dp"
-            android:foreground="?attr/selectableItemBackground"
-            android:onClick="onRadioButton"
-            android:text="Yogyakarta" />
-
-    </RadioGroup>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

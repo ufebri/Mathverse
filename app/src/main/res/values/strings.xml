@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Quiz Game</string>
+    <string name="app_name">Mathverse</string>
+
+    <string name="action_button">Ini Button, di Klik Dong..</string>
+    <string name="text_color_white">Putih</string>
+    <string name="text_color_black">Hitam</string>
+
+    <string name="title_long_square">Hitung Luas Persegi Panjang</string>
+    <string name="hint_length">Panjang?</string>
+    <string name="hint_wide">Lebar?</string>
+    <string name="text_calculate">Hitung</string>
+    <string name="clear">Clear</string>
+    <string name="result">Luas = </string>
 </resources>

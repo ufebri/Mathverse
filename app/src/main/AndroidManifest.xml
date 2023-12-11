@@ -6,10 +6,39 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.AplikasiUAS">
+        <activity
+            android:name=".ui.blackwhite.BwActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.pyramid.PyramidActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.volume.VolumeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.studentid.UpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.studentid.ListStudentsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.studentid.StudentActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="lagingoding.quizgame.SplashActivity"
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
