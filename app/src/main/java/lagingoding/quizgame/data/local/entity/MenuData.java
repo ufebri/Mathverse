@@ -5,7 +5,6 @@ import android.graphics.drawable.Drawable;
 
 import androidx.core.content.ContextCompat;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
