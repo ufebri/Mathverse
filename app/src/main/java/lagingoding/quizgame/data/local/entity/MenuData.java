@@ -41,6 +41,7 @@ public class MenuData {
     public static final int PYRAMID = 2;
     public static final int VOLUME = 3;
     public static final int STUDENT_CARD = 4;
+    public static final int BARCODE_READER = 5;
 
     private int getIdICMenu(int idMenu) {
         int id = 0;
@@ -57,6 +58,9 @@ public class MenuData {
             case STUDENT_CARD:
                 id = R.drawable.baseline_card_membership_24;
                 break;
+            case BARCODE_READER:
+                id = R.drawable.baseline_barcode_reader_24;
+                break;
         }
         return id;
     }
@@ -67,6 +71,7 @@ public class MenuData {
         menuDataList.add(new MenuData(PYRAMID, "Pyramid", getIcMenu(context, PYRAMID)));
         menuDataList.add(new MenuData(VOLUME, "Volume", getIcMenu(context, VOLUME)));
         menuDataList.add(new MenuData(STUDENT_CARD, "Student ID", getIcMenu(context, STUDENT_CARD)));
+        menuDataList.add(new MenuData(BARCODE_READER, "Barcode Reader", getIcMenu(context, BARCODE_READER)));
 
         return menuDataList;
     }

@@ -49,17 +49,30 @@
 -keepattributes Exceptions
 
 # Your model classes
--keep class your.package.name.model.** { *; }
+-keep class lagingoding.quizgame.data.remote.model.** { *; }
 
-# Keep Retrofit, OkHttp, and Gson
+# Retrofit
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn retrofit2.PlatformTypes
+
+# Retain generic type information for use by reflection by converters and adapters.
+-keepattributes Signature
+-keepattributes *Annotation*
+
+# Keep class Retrofit and related classes for reflection
 -keep class retrofit2.** { *; }
--keep class okhttp3.** { *; }
--keep class com.google.gson.** { *; }
-
-# Keep the Retrofit service method parameters
--keepclassmembers,allowobfuscation,allowshrinking interface * {
+-keep class com.squareup.okhttp3.** { *; }
+-keepclassmembers,allowobfuscation interface retrofit2.** {
     @retrofit2.http.* <methods>;
 }
+
+# OkHttp
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn javax.annotation.Nullable
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
 
 # Allow serialization/deserialization in Gson
 -keepattributes *Annotation*
@@ -81,13 +94,12 @@
     java.lang.Object readResolve();
 }
 
-# Keep members of classes that are used for serialization/deserialization
--keepclassmembers class * {
-    @com.google.gson.annotations.SerializedName <fields>;
-}
+# Prevent obfuscation of Google Auth classes
+-keep class com.google.api.client.googleapis.auth.oauth2.** { *; }
+-keep class com.google.api.client.http.** { *; }
+-keep class com.google.api.client.json.** { *; }
 
-# Keep Retrofit and OkHttp annotation processors
--keep class retrofit2.http.** { *; }
--keep class okhttp3.** { *; }
--keep class com.google.gson.** { *; }
+# Keep classes related to authentication and network requests
+-keep class com.google.api.services.sheets.** { *; }
+-keep class com.google.auth.** { *; }
 
