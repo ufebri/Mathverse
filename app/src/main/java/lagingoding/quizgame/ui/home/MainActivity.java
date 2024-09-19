@@ -13,6 +13,7 @@ import lagingoding.quizgame.R;
 import lagingoding.quizgame.data.local.entity.MenuData;
 import lagingoding.quizgame.ui.blackwhite.BwActivity;
 import lagingoding.quizgame.ui.pyramid.PyramidActivity;
+import lagingoding.quizgame.ui.sbar.BarcodeScannerActivity;
 import lagingoding.quizgame.ui.studentid.StudentActivity;
 import lagingoding.quizgame.ui.volume.VolumeActivity;
 
@@ -41,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case MenuData.VOLUME:
                     startActivity(new Intent(this, VolumeActivity.class));
+                    break;
+                case MenuData.BARCODE_READER:
+                    startActivity(new Intent(this, BarcodeScannerActivity.class));
                     break;
             }
         });
