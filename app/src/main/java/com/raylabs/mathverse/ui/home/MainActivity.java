@@ -15,7 +15,7 @@ import com.raylabs.mathverse.feature.blackwhite.ui.BwActivity;
 import com.raylabs.mathverse.feature.pyramid.ui.PyramidActivity;
 import com.raylabs.mathverse.ui.sbar.BarcodeScannerActivity;
 import com.raylabs.mathverse.ui.studentid.StudentActivity;
-import com.raylabs.mathverse.ui.volume.VolumeActivity;
+import com.raylabs.mathverse.feature.volume.ui.VolumeActivity;
 
 public class MainActivity extends AppCompatActivity {
 

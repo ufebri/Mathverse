@@ -1,4 +1,4 @@
-package com.raylabs.mathverse.ui.volume;
+package com.raylabs.mathverse.feature.volume.ui;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,10 +8,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.raylabs.mathverse.R;
+import com.raylabs.mathverse.feature.volume.data.VolumeCalculator;
 
 import java.text.DecimalFormat;
 import java.util.Locale;
-
 
 public class VolumeActivity extends AppCompatActivity {
 
@@ -37,11 +37,14 @@ public class VolumeActivity extends AppCompatActivity {
 
 
     private void calculate() {
-        Double wide = Double.parseDouble(etWide.getText().toString());
-        Double length = Double.parseDouble(etLength.getText().toString());
-
-        Double result = wide * length;
-        tvResult.setText(String.format(Locale.getDefault(), "Luas = %s", new DecimalFormat("0.#").format(result)));
+        try {
+            double width = Double.parseDouble(etWide.getText().toString());
+            double length = Double.parseDouble(etLength.getText().toString());
+            double result = VolumeCalculator.calculate(width, length);
+            tvResult.setText(String.format(Locale.getDefault(), "Luas = %s", new DecimalFormat("0.#").format(result)));
+        } catch (NumberFormatException e) {
+            tvResult.setText(getString(R.string.result)); // fallback or show error
+        }
     }
 
     private void clear() {

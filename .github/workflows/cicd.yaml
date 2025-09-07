@@ -118,11 +118,16 @@ jobs:
           git commit -m "ci: bump version after Firebase upload"
           git push origin $(git rev-parse --abbrev-ref HEAD)
 
+      - name: Write service account to file
+        run: |
+          echo '${{ secrets.CREDENTIAL_FILE_CONTENT }}' > service_account.json
+          jq -r '.project_id, .client_email, .type' service_account.json | nl -ba || true
+
       - name: Distribute APK to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{ secrets.FIREBASE_APP_ID }}
-          serviceCredentialsFile: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          serviceCredentialsFile: service_account.json
           groups: internal-tester
           file: ${{ env.APK_PATH }}
           releaseNotesFile: release-notes.txt
