@@ -16,11 +16,11 @@ data class SelectionBundle(
     val prices: List<Price>
 )
 
-class MyChoiceRepository(
+open class MyChoiceRepository(
     private val db: AppDb,
     private val io: CoroutineDispatcher = Dispatchers.IO
 ) {
-    fun observeSelections(): Flow<List<Selection>> = db.selectionDao().observeSelections()
+    open fun observeSelections(): Flow<List<Selection>> = db.selectionDao().observeSelections()
 
     suspend fun getSelectionBundle(selectionId: Long): SelectionBundle = withContext(io) {
         val options = db.optionDao().getOptions(selectionId)
