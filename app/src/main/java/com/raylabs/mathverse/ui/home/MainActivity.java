@@ -7,15 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 import com.raylabs.mathverse.R;
 import com.raylabs.mathverse.data.local.entity.MenuData;
 import com.raylabs.mathverse.feature.blackwhite.ui.BwActivity;
 import com.raylabs.mathverse.feature.pyramid.ui.PyramidActivity;
+import com.raylabs.mathverse.feature.volume.ui.VolumeActivity;
 import com.raylabs.mathverse.ui.sbar.BarcodeScannerActivity;
 import com.raylabs.mathverse.ui.studentid.StudentActivity;
-import com.raylabs.mathverse.feature.volume.ui.VolumeActivity;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

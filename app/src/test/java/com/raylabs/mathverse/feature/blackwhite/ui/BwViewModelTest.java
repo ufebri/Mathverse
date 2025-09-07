@@ -1,11 +1,14 @@
 package com.raylabs.mathverse.feature.blackwhite.ui;
 
-import com.raylabs.mathverse.feature.blackwhite.domain.BwLabels;
-import org.junit.Rule;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
+
+import com.raylabs.mathverse.feature.blackwhite.domain.BwLabels;
+
+import org.junit.Rule;
+import org.junit.Test;
 
 public class BwViewModelTest {
 

@@ -1,7 +1,9 @@
 package com.raylabs.mathverse.data.local.entity;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class StudentTest {
 

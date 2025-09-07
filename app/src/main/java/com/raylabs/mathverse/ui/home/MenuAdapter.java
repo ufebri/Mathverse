@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 import com.raylabs.mathverse.R;
 import com.raylabs.mathverse.data.local.entity.MenuData;
 import com.raylabs.mathverse.data.local.entity.MenuViewHolder;
+
+import java.util.List;
 
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {

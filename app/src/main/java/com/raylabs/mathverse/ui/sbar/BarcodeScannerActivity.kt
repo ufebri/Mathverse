@@ -5,16 +5,16 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import android.widget.Toast
 import com.raylabs.mathverse.BuildConfig
 import com.raylabs.mathverse.R
 import com.raylabs.mathverse.data.remote.model.SheetResponse
 import com.raylabs.mathverse.data.remote.network.ApiClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class BarcodeScannerActivity : AppCompatActivity() {
 

@@ -1,7 +1,8 @@
 package com.raylabs.mathverse.feature.blackwhite.domain;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class BuildBwLabelsUseCaseTest {
     private final BuildBwLabelsUseCase useCase = new BuildBwLabelsUseCase();

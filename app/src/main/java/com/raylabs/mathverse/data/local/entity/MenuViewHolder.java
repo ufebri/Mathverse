@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.imageview.ShapeableImageView;
-
 import com.raylabs.mathverse.R;
 import com.raylabs.mathverse.ui.home.MenuAdapter;
 

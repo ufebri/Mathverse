@@ -1,6 +1,7 @@
 package com.raylabs.mathverse.feature.mychoice.data.local
 
-import androidx.room.*
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "selection")
 data class Selection(

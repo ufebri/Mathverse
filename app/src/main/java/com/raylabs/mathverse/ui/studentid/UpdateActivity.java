@@ -11,7 +11,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
-
 import com.raylabs.mathverse.R;
 import com.raylabs.mathverse.data.local.database.DBHelper;
 import com.raylabs.mathverse.data.local.entity.Student;
