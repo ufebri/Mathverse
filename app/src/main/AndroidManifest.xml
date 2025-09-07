@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lagingoding.quizgame">
+    package="com.raylabs.mathverse">
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -18,36 +18,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiUAS">
         <activity
-            android:name=".ui.blackwhite.BwActivity"
+            android:name="com.raylabs.mathverse.ui.blackwhite.BwActivity"
             android:exported="false" />
 
         <activity
-            android:name=".ui.pyramid.PyramidActivity"
+            android:name="com.raylabs.mathverse.ui.pyramid.PyramidActivity"
             android:exported="false" />
 
         <activity
-            android:name=".ui.volume.VolumeActivity"
+            android:name="com.raylabs.mathverse.ui.volume.VolumeActivity"
             android:exported="false" />
 
         <activity
-            android:name=".ui.studentid.UpdateActivity"
+            android:name="com.raylabs.mathverse.ui.studentid.UpdateActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.studentid.ListStudentsActivity"
+            android:name="com.raylabs.mathverse.ui.studentid.ListStudentsActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.studentid.StudentActivity"
-            android:exported="true" />
-
-        <activity android:name=".ui.sbar.BarcodeScannerActivity"
+            android:name="com.raylabs.mathverse.ui.studentid.StudentActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.home.MainActivity"
+            android:name="com.raylabs.mathverse.ui.sbar.BarcodeScannerActivity"
             android:exported="true" />
 
         <activity
-            android:name="lagingoding.quizgame.SplashActivity"
+            android:name="com.raylabs.mathverse.ui.home.MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".feature.mychoice.ui.MyChoiceActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".SplashActivity"
             android:exported="true"
             android:noHistory="true">
             <intent-filter>
