@@ -1,4 +1,4 @@
-package com.raylabs.mathverse;
+package com.raylabs.mathverse.ui.splash;
 
 import android.app.Activity;
 import android.content.Intent;

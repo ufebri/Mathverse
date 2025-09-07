@@ -11,7 +11,11 @@
         <item name="android:windowBackground">@color/white</item>
     </style>
 
-    <style name="Theme.AplikasiUAS" parent="Base.Theme.AplikasiUAS" />
+    <style name="Theme.AplikasiUAS" parent="Base.Theme.AplikasiUAS">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item> <!-- ikon gelap -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
 
     <!-- Splash Screen -->
     <style name="splashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">

@@ -44,17 +44,20 @@
             android:exported="true" />
 
         <activity
-            android:name="com.raylabs.mathverse.ui.home.MainActivity"
-            android:exported="true" />
+            android:name=".ui.home.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AplikasiUAS" />
 
         <activity
             android:name=".feature.mychoice.ui.MyChoiceActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.AplikasiUAS" />
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:theme="@style/splashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
