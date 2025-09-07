@@ -1,4 +1,4 @@
-(https://coveralls.io/repos/github/ufebri/Mathverse/badge.svg?branch=master)](https://coveralls.io/github/ufebri/Mathverse?branch=master)![Join Firebase Testing](https://img.shields.io/badge/Firebase-Join%20Testing-orange?logo=firebase)](https://appdistribution.firebase.dev/i/0a3e7fd5443959fb)
+![(https://coveralls.io/repos/github/ufebri/Mathverse/badge.svg?branch=master)](https://coveralls.io/github/ufebri/Mathverse?branch=master) ![Join Firebase Testing](https://img.shields.io/badge/Firebase-Join%20Testing-orange?logo=firebase)](https://appdistribution.firebase.dev/i/0a3e7fd5443959fb)
 
 
 # Mathverse

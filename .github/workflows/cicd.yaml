@@ -122,7 +122,7 @@ jobs:
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{ secrets.FIREBASE_APP_ID }}
-          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          serviceCredentialsFile: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: internal-tester
           file: ${{ env.APK_PATH }}
           releaseNotesFile: release-notes.txt

@@ -22,7 +22,7 @@
             android:exported="false" />
 
         <activity
-            android:name="com.raylabs.mathverse.ui.pyramid.PyramidActivity"
+            android:name="com.raylabs.mathverse.feature.pyramid.ui.PyramidActivity"
             android:exported="false" />
 
         <activity
