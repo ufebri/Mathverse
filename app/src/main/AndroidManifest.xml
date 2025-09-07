@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiUAS">
         <activity
-            android:name="com.raylabs.mathverse.ui.blackwhite.BwActivity"
+            android:name="com.raylabs.mathverse.feature.blackwhite.ui.BwActivity"
             android:exported="false" />
 
         <activity
