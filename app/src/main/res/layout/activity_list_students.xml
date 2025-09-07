@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.studentid.ListStudentsActivity">
+    tools:context="com.raylabs.mathverse.ui.studentid.ListStudentsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list"

@@ -1,32 +1,55 @@
-apply plugin: 'com.android.application'
-apply plugin: 'org.jetbrains.kotlin.android'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'jacoco'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+def apikeyPropertiesFile = rootProject.file("config.properties")
+def apikeyProperties = new Properties()
+
+if (apikeyPropertiesFile.exists()) {
+    apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+}
+
+def versionPropsFile = rootProject.file('version.properties')
+def versionProps = new Properties()
+versionProps.load(new FileInputStream(versionPropsFile))
+
 
 android {
-    namespace 'lagingoding.quizgame'
-    compileSdk 34
+    namespace 'com.raylabs.mathverse'
+    compileSdk 36
     defaultConfig {
-        applicationId "lagingoding.quizgame"
-        minSdk 21
-        targetSdk 34
-        versionCode 3
-        versionName "1.2.0"
+        applicationId "com.raylabs.mathverse"
+        minSdk 23
+        targetSdk 36
+        versionCode versionProps['VERSION_CODE'].toInteger()
+        versionName versionProps['VERSION_NAME']
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
-        def localProperties = new Properties()
-        def localPropertiesFile = rootProject.file("local.properties")
-        if (localPropertiesFile.exists()) {
-            localPropertiesFile.withInputStream { stream ->
-                localProperties.load(stream)
-            }
-        }
-        buildConfigField("String", "API_KEY_GSHEET", "\"${localProperties['API_KEY_GSHEET']}\"")
-        buildConfigField("String", "SPREADSHEET_ID", "\"${localProperties['SPREADSHEET_ID']}\"")
+        buildConfigField("String", "API_KEY_GSHEET", "\"${apikeyProperties['API_KEY_GSHEET']}\"")
+        buildConfigField("String", "SPREADSHEET_ID", "\"${apikeyProperties['SPREADSHEET_ID']}\"")
     }
+
+    signingConfigs {
+        release {
+            storeFile file(apikeyProperties["MYAPP_RELEASE_KEYSTORE_FILE"])
+            storePassword apikeyProperties["MYAPP_RELEASE_KEYSTORE_PASSWORD"]
+            keyAlias apikeyProperties["MYAPP_RELEASE_KEY_ALIAS"]
+            keyPassword apikeyProperties["MYAPP_RELEASE_KEY_PASSWORD"]
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
 
         debug {
@@ -41,19 +64,58 @@ android {
     }
 
     buildFeatures {
+        compose true
         viewBinding true
         buildConfig true
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 }
 
+tasks.register("jacocoTestReport", JacocoReport) {
+    dependsOn "testDebugUnitTest"
+
+    reports {
+        xml.required = true   // Coveralls butuh XML
+        html.required = true
+    }
+
+    // kelas hasil compile Java (Debug)
+    def debugTree = fileTree(
+            dir: "$buildDir/intermediates/javac/debug",
+            exclude: [
+                    '**/R.class', '**/R$*.class',
+                    '**/BuildConfig.*',
+                    '**/*$ViewInjector*.*',
+                    '**/*$ViewBinder*.*',
+                    '**/androidx/**/*.*'
+            ]
+    )
+
+    sourceDirectories.setFrom files("src/main/java")
+    classDirectories.setFrom files(debugTree)
+
+    // lokasi file eksekusi coverage
+    executionData.setFrom files(
+            "$buildDir/jacoco/testDebugUnitTest.exec",
+            "$buildDir/outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec"
+    ).filter { it.exists() }
+}
+
+jacoco { toolVersion = "0.8.11" }
+
 dependencies {
+    implementation platform("org.jetbrains.kotlin:kotlin-bom:$kotlin_version")
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.compose.runtime:runtime-android:1.9.0'
+    implementation 'androidx.navigation:navigation-runtime-android:2.9.3'
+    implementation 'androidx.compose.material3:material3-android:1.3.2'
+    implementation 'androidx.navigation:navigation-compose:2.9.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
@@ -66,5 +128,13 @@ dependencies {
     // ZXing (Barcode Scanner)
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 
+    implementation "androidx.room:room-runtime:2.7.2"
+    ksp "androidx.room:room-compiler:2.7.2"
 
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.3'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.9.3'
+
+    implementation platform('com.google.firebase:firebase-bom:34.2.0')
+    implementation 'com.google.firebase:firebase-crashlytics'
 }
